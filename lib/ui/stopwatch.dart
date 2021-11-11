@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:animation_app/ui/elapsed_time_text.dart';
+import 'package:animation_app/ui/stopwatch_renderer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -32,8 +33,6 @@ class _StopwatchState extends State<Stopwatch>
 
   @override
   Widget build(BuildContext context) {
-    return ElapsedTimeText(
-      elapsed: _eplapsed,
-    );
+    return StopWatchRenderer(elapsed: _eplapsed);
   }
 }
