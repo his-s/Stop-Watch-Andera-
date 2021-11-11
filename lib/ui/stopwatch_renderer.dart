@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animation_app/ui/clock_hand.dart';
 import 'package:animation_app/ui/elapsed_time_text.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +20,24 @@ class StopWatchRenderer extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius),
           ),
         ),
-        // ElapsedTimeText(
-        //   elapsed: elapsed,
-        // ),
+        Positioned(
+          left: radius,
+          top: radius,
+          child: ClockHand(
+            handThickness: 2,
+            handheigth: radius,
+            handColor: Colors.orange,
+            rotationZAngel: pi + (2 * pi / 60000) * elapsed.inMilliseconds,
+          ),
+        ),
+        Positioned(
+          top: radius * 1.3,
+          left: 0,
+          right: 0,
+          child: ElapsedTimeText(
+            elapsed: elapsed,
+          ),
+        ),
       ],
     );
   }
