@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import './ui/stopwatch.dart';
 
-
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
       ),
       debugShowCheckedModeBanner: false,
-      home:  MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -29,7 +28,13 @@ class MyHomePage extends StatelessWidget {
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Center(
-          child: Stopwatch(),
+          child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: AspectRatio(
+              aspectRatio: 1.0,
+              child: Stopwatch(),
+            ),
+          ),
         ),
       ),
     );

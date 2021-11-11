@@ -6,8 +6,15 @@ class StopWatchRenderer extends StatelessWidget {
   final Duration elapsed;
   @override
   Widget build(BuildContext context) {
-    return ElapsedTimeText(
-      elapsed: elapsed,
+    return Stack(
+      children: [
+        Container(
+          color: Colors.indigo,
+        ),
+        ElapsedTimeText(
+          elapsed: elapsed,
+        ),
+      ],
     );
   }
 }
