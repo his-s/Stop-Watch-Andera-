@@ -4,19 +4,19 @@ import 'package:animation_app/ui/elapsed_time_text.dart';
 import 'package:flutter/material.dart';
 
 class StopWatchRenderer extends StatelessWidget {
-  const StopWatchRenderer({Key? key, required this.elapsed}) : super(key: key);
+  const StopWatchRenderer(
+      {Key? key, required this.elapsed, required this.radius})
+      : super(key: key);
   final Duration elapsed;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Transform(
-          transform: Matrix4.identity()
-            ..translate(50.0, 0.0, 0.0)
-            ..rotateZ(pi / 4),
-          alignment: Alignment.center,
-          child: Container(
-            color: Colors.indigo,
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.orange, width: 3),
+            borderRadius: BorderRadius.circular(radius),
           ),
         ),
         // ElapsedTimeText(
