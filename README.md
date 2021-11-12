@@ -1,5 +1,4 @@
-# Animation Chalange Stop Watch Application 
-
+# Animation Challenge Stopwatch Application
 A new Flutter project.
 
 ## Getting Started
